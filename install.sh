@@ -42,7 +42,7 @@ banner "Install Package"
 }
 
 ##static ip address
-static_ip(){
+static_ip_config(){
 banner "Configure static ip address"
     WIRE=$(ls /sys/class/net/ | grep eth)
     WIRELESS=$(ls /sys/class/net/ | grep wl)
@@ -82,7 +82,7 @@ banner "Configure static ip address"
 }
 
 ##dhcp
-dhcp(){
+dhcp_config(){
 banner "Configure dhcp"
 
     PREFIX1=$(echo ${LANIP} | awk -F'.' '{print $1}')
@@ -92,18 +92,36 @@ banner "Configure dhcp"
     NETWORK="${PREFIX1}.${PREFIX2}.${PREFIX3}.0"
     SUBNET="${LANNETMASK}"
     GATEWAY="${LANGATEWAY}"
-    RANK="${PREFIX1}.${PREFIX2}.${PREFIX3}.10 ${PREFIX1}.${PREFIX2}.${PREFIX3}.254"
 
     echo "Network[]: ${NETWORK}"
     echo "Subnet[]: ${SUBNET}"
     echo "Gateway[]: ${GATEWAY}"
+
     read -p "We recommended use rank (10-254) [Y\n]: " YN
+    if [[ "${YN}" == "Y" || "${YN}" == "y" || -z "${YN}" ]];then
+        RANK="${PREFIX1}.${PREFIX2}.${PREFIX3}.10 ${PREFIX1}.${PREFIX2}.${PREFIX3}.254"
+        echo "Rank[]: ${RANK}"
+    else
+        read -p "Rank start from[]: " START
+        read -p "To[]: " END
+        RANK="${PREFIX1}.${PREFIX2}.${PREFIX3}.${START} ${PREFIX1}.${PREFIX2}.${PREFIX3}.${END}"
+        echo "Rank[]: ${RANK}"
+    fi
 
     cp $(pwd)/dhcp/dhcpd.conf /etc/dhcp/
+    echo -e "${GREEN}[ OK ] Copy dhcp config${NC}"
+
+    grep -rli IPNETWORK /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPNETWORK+${NETWORK}+g @
+    grep -rli IPSUBNET /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPSUBNET+${SUBNET}+g @
+    grep -rli IPRANK /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPRANK+${RANK}+g @
+    grep -rli IPGATEWAY /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPGATEWAY+${GATEWAY}+g @
+    echo -e "${GREEN}[ OK ] Configure dhcp${NC}"
+
 
 }
 
 ##call function
 check_root
 package_install
-static_ip
+static_ip_config
+dhcp_config
