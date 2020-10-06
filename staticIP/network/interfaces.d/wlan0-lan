@@ -1,0 +1,6 @@
+# Wireless adapter #1
+allow-hotplug wlan0
+iface wlan0 inet static
+address LANIP
+netmask LANNETMASK
+gateway LANGATEWAY

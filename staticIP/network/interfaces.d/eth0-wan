@@ -1,0 +1,7 @@
+# Wired adapter #1
+allow-hotplug eth0
+no-auto-down eth0
+iface eth0 inet static
+address WANIP
+netmask WANNETMASK
+gateway WANGATEWAY
