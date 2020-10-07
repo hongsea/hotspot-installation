@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 ##This script run for install hotspot
 
@@ -44,25 +44,25 @@ banner "Install Package"
 ##static ip address
 static_ip_config(){
 banner "Configure static ip address"
-    WIRE=$(ls /sys/class/net/ | grep eth)
+    WIRE=$(ls /sys/class/net/ | grep eth | awk 'NR==1')
     WIRELESS=$(ls /sys/class/net/ | grep wl)
 
     echo -e "You are have interfaces wan and lan!"
     #input wan ip
-    echo "[${WIRE}]: wan interface"
+    echo "[${WIRE}]: is WAN interface"
     read -p "IP Address[]: " WANIP
-    read -p "Netmask[]:" WANNETMASK
-    read -p "Gateway[]:" WANGATEWAY
+    read -p "Netmask[]: " WANNETMASK
+    read -p "Gateway[]: " WANGATEWAY
 
 
     #input lan ip
-    echo -e "\n[${WIRELESS}]: lan interface"
-    read -p "IP Address[]:" LANIP
-    read -p "Netmask[]:" LANNETMASK
-    read -p "Gateway[]:" LANGATEWAY    
+    echo -e "\n[${WIRELESS}]: is LAN interface"
+    read -p "IP Address[]: " LANIP
+    read -p "Netmask[]: " LANNETMASK
+    read -p "Gateway[]: " LANGATEWAY    
 
     #copy config to /etc/network
-    cp $(pwd)/network /etc/
+    cp -r $(pwd)/staticIP/network /etc/
 
     #replace name in config file
     #wan interface
@@ -97,7 +97,7 @@ banner "Configure dhcp"
     echo "Subnet[]: ${SUBNET}"
     echo "Gateway[]: ${GATEWAY}"
 
-    read -p "We recommended use rank (10-254) [Y\n]: " YN
+    read -p "We recommended use range (10-254) [Y\n]: " YN
     if [[ "${YN}" == "Y" || "${YN}" == "y" || -z "${YN}" ]];then
         RANK="${PREFIX1}.${PREFIX2}.${PREFIX3}.10 ${PREFIX1}.${PREFIX2}.${PREFIX3}.254"
         echo "Rank[]: ${RANK}"
@@ -113,15 +113,40 @@ banner "Configure dhcp"
 
     grep -rli IPNETWORK /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPNETWORK+${NETWORK}+g @
     grep -rli IPSUBNET /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPSUBNET+${SUBNET}+g @
-    grep -rli IPRANK /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPRANK+${RANK}+g @
+    grep -rli IPRANK /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPRANK+"${RANK}"+g @
     grep -rli IPGATEWAY /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPGATEWAY+${GATEWAY}+g @
     echo -e "${GREEN}[ OK ] Configure dhcp${NC}"
+
+}
+
+##postgresql
+postgresql_config(){
+banner "Install Postgresql"
+
+    systemctl enable docker
+    sudo systemctl start docker
+    echo "${GREEN}[ OK ] Start service docker!${NC}"
+
+    read -p "Postgresql Username[]: " USERNAME
+    read -p "Postgresql Password[]: " PASSWORD
+
+    cp -r postgresql /opt/
+    echo -e "${GREEN}[ OK ] Copy docker compose!${NC}"
+
+    grep -rli USERNAME /opt/postgresql/docker-compose.yml | xargs -i@ sed -i s+USERNAME+"${USERNAME}"+g @
+    grep -rli PASSWORD /opt/postgresql/docker-compose.yml | xargs -i@ sed -i s+PASSWORD+${PASSWORD}+g @
+    echo -e "${GREEN}[ OK ] Configure docker-compose!${NC}"
+
+    docker-compose -f /opt/postgresql/docker-compose.yml down
+    docker-compose -f /opt/postgresql/docker-compose.yml up -d
+    echo -e "${GREEN}[ OK ] Start docker-compose!${NC}"
 
 
 }
 
 ##call function
 check_root
-package_install
+# package_install
 static_ip_config
 dhcp_config
+postgresql_config
