@@ -88,10 +88,10 @@ sql {
 
 	# Connection info:
 	#
-	server = "ec2-52-221-199-235.ap-southeast-1.compute.amazonaws.com"
-	port = 5431
-	login = "koompi-hotspot-wifi"
-	password = "0256b64ed0db750636bd0d145b9385d4"
+	server = "ip"
+	port = port
+	login = "username"
+	password = "password"
 
 	# Database table configuration for everything except Oracle
 	radius_db = "radius"
