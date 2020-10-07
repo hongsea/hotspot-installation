@@ -19,3 +19,5 @@ dpkg-dev
 docker
 docker-compose
 isc-dhcp-server
+freeradius
+freeradius-postgresql
