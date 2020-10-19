@@ -88,10 +88,10 @@ sql {
 
 	# Connection info:
 	#
-	server = "ip"
-	port = port
-	login = "username"
-	password = "password"
+	server = "IPSERVER"
+	port = PORTNUMBER
+	login = "USERNAME"
+	password = "PASSWORDLOGIN"
 
 	# Database table configuration for everything except Oracle
 	radius_db = "radius"
@@ -227,7 +227,7 @@ sql {
 
 		#  idle timeout (in seconds).  A connection which is
 		#  unused for this length of time will be closed.
-		idle_timeout = 60
+		idle_timeout = 0
 
 		#  NOTE: All configuration settings are enforced.  If a
 		#  connection is closed because of "idle_timeout",
