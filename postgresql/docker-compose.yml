@@ -7,7 +7,7 @@ services:
       - ./dbs:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: USERNAME
-      POSTGRES_PASSWORD: PASSWORD
+      POSTGRES_PASSWORD: PASSWD
     ports:
       - 5432:5432
 

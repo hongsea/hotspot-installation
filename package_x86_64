@@ -16,8 +16,9 @@ autoconf
 automake
 build-essential
 dpkg-dev
-docker
+docker.io
 docker-compose
 isc-dhcp-server
 freeradius
 freeradius-postgresql
+tar
