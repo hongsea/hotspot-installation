@@ -16,7 +16,7 @@ autoconf
 automake
 build-essential
 dpkg-dev
-docker.io
+docker
 docker-compose
 isc-dhcp-server
 freeradius
