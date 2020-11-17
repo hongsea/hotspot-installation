@@ -90,7 +90,7 @@ $(pwd)/src/hostapd-config.sh "$SSID" "$WIRELESS"
 $(pwd)/src/freeradius-config.sh "$IPSERVERRADIUS" "$PORT" "$SQLUSERNAME" "$SQLPASSWORD" "$RADIUSPASSWD"
 
 ##Configure chilli file
-$(pwd)/src/coovachilli-config.sh "$WIRE" "$WIRELESS" "$LANIP" "$LANNETMASK" "$LANGATEWAY" "$SSID" "$RADIUSPASSWD"
+$(pwd)/src/coovachilli-config.sh "$WIRE" "$WIRELESS" "$LANIP" "$LANNETMASK" "$LANGATEWAY" "$SSID" "$RADIUSPASSWD" "$DOMAIN"
 
 ##Configure bind file
 $(pwd)/src/bind-config.sh "$DOMAIN" "$LANIP"

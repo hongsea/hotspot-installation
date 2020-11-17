@@ -15,6 +15,7 @@ LANNETMASK=$4
 LANGATEWAY=$5
 SSID=$6
 RADIUSPASSWD=$7
+DOMAIN=$8
 
 ##coovachilli
 coovachilli_config(){
@@ -43,6 +44,7 @@ coovachilli_config(){
     grep -rli IPGATEWAY /etc/chilli/config | xargs -i@ sed -i s+IPGATEWAY+${GATEWAY}+g @
     grep -rli SSIDNAME /etc/chilli/config | xargs -i@ sed -i s+SSIDNAME+${SSID}+g @
     grep -rli PASSRAD /etc/chilli/config | xargs -i@ sed -i s+PASSRAD+${RADIUSPASSWD}+g @
+    grep -rli DOMAINNAME /etc/chilli/config | xargs -i@ sed -i s+DOMAINNAME+${RADIUSPASSWD}+g @
     echo -e "${GREEN}[ OK ] Configure coova!${NC}"
 
     systemctl enable chilli
