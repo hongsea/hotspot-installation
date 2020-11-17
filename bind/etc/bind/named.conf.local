@@ -1,0 +1,19 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+#forward lookup, where the domain’s IP address is searched
+zone "DOMAINNAME" IN {
+        type master;
+        file "/etc/bind/db.DOMAINNAME";
+};
+
+#reverse lookup for the inverse query.
+zone "IPADDRESSREVERSE.in-addr.arpa" {
+        type master;
+        file "/etc/bind/db.rev.IPADDRESSREVERSE.in-addr.arpa";
+};

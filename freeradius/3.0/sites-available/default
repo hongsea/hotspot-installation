@@ -379,6 +379,11 @@ authorize {
 	#  uncomment it as well; this will further reduce the number of
 	#  LDAP and/or SQL queries for TTLS or PEAP.
 	#
+
+#	monthlycounter
+#	expiration
+#	accessperiod
+
 	eap {
 		ok = return
 #		updated = return
@@ -402,7 +407,53 @@ authorize {
 	#  is meant to mirror the "users" file.
 	#
 	#  See "Authorization Queries" in mods-available/sql
-	sql
+	sql{
+		notfound = 1
+		reject = 2
+	}
+
+	#check notfound
+	if(notfound){
+		update reply{
+			Reply-Message := 'Login Faild, Please check your username and password. Thank You!'
+		}
+		reject
+	}
+
+	#check reject
+	if(reject){
+                update reply{
+                        Reply-Message := 'Login Faild, Please check your username and password. Thank You!'
+                }
+                reject
+        }
+
+	#check accessperiod
+	#accessperiod{
+	#	reject = 1
+	#}
+	#if (reject){
+	#	update reply{
+	#		Reply-Message := 'You have reached uptime limit. Please check your hotspot plan. Thank You!'
+	#	}
+	#reject
+	#}
+
+	#check expiration
+	expiration{
+	   userlock = 1
+	}
+	if (userlock){
+	   update reply{
+	       Reply-Message := 'Your account has expired. Please check your hotspot plan. Thank You!.'
+	   }
+	   reject
+	}
+
+#        quotalimit
+#        monthlycounter
+#	dailybandwidthcounter
+#	chillispot_max_bytes
 
 	#
 	#  If you are using /etc/smbpasswd, and are also doing
@@ -419,8 +470,8 @@ authorize {
 #	daily
 
 	#
-	expiration
-	logintime
+#	expiration
+#	logintime
 
 	#
 	#  If no other module has claimed responsibility for
