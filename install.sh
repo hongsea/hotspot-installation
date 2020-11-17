@@ -82,6 +82,9 @@ else
     static-config
 fi
 
+##Configure dhcp file
+$(pwd)/src/dhcp-config.sh "$LANIP" "$LANNETMASK" "$LANGATEWAY"
+
 ##Configure postgresql file
 $(pwd)/src/postgresql-config.sh "$SQLUSERNAME" "$SQLPASSWORD"
 

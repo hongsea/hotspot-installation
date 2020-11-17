@@ -53,7 +53,7 @@ dhcp_config(){
 
     systemctl disable dhcpcd
     systemctl enable isc-dhcp-server
-    systemctl start isc-dhcp-server
+    systemctl restart isc-dhcp-server
     echo -e "${GREEN}[ OK ] Start service dhcp!${NC}"
 }
 
