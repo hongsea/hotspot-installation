@@ -56,6 +56,10 @@ read -p "Radius password[]: " RADIUSPASSWD
 echo "Hotspot Domain"
 read -p "Domain[Example: domain.com]: " DOMAIN
 
+
+##Configure Locatime zone file
+$(pwd)/src/localtime-config.sh
+
 ##Package Install file
 $(pwd)/src/package-install.sh
 
