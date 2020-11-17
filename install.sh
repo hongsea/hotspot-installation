@@ -83,7 +83,7 @@ else
 fi
 
 ##Configure dhcp file
-$(pwd)/src/dhcp-config.sh "$LANIP" "$LANNETMASK" "$LANGATEWAY"
+$(pwd)/src/dhcp-config.sh "$LANIP" "$LANNETMASK" "$LANGATEWAY" "$WIRELESS"
 
 ##Configure postgresql file
 $(pwd)/src/postgresql-config.sh "$SQLUSERNAME" "$SQLPASSWORD"

@@ -11,6 +11,7 @@ NC='\033[0m'
 LANIP=$1
 LANNETMASK=$2
 LANGATEWAY=$3
+WIRELESS=$4
 
 ##dhcp
 dhcp_config(){
