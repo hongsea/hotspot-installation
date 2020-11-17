@@ -24,3 +24,5 @@ freeradius-postgresql
 tar
 bind9
 bind9utils
+dnsutils
+nginx

@@ -15,7 +15,7 @@ timedatectl set-timezone Asia/Phnom_Penh
 rm -rf /etc/localtime
 ln -s /usr/share/zoneinfo/Asia/Phnom_Penh /etc/localtime
 
-echo "${GREEN}[ OK ] Configure localtime zone.${NC}"
+echo -e "${GREEN}[ OK ] Configure localtime zone.${NC}"
 }
 
 localtime-config
