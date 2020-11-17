@@ -3,6 +3,8 @@
 ##This script run for install Wi-Fi hotspot.
 ##It management by Hongsea Heng.
 
+rfkill unblock
+
 ##run as root
 check_root(){
     if [[ $(id -u) != 0 ]]; then
