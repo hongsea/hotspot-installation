@@ -28,8 +28,8 @@ HS_TUNDEV=wlan0-tun
 # HS_DNS_DOMAIN=
 
 # OpenDNS Servers
-HS_DNS1=208.67.222.222
-HS_DNS2=208.67.220.220
+HS_DNS1=INTERFACELAN
+HS_DNS2=8.8.8.8
 
 ###
 #   HotSpot settings for simple Captive Portal
@@ -77,10 +77,10 @@ HS_UAMSERVER=$HS_UAMLISTEN
 #   Shell variable replacement takes place when evaluated, so here
 #   HS_UAMSERVER is escaped and later replaced by the pre-defined 
 #   HS_UAMSERVER to form the actual "--uamserver" option in chilli.
-HS_UAMFORMAT=http://DOMAINNAME:\$HS_UAMUIPORT/www/login.chi
+HS_UAMFORMAT=http://redirect.DOMAINNAME:\$HS_UAMUIPORT/www/login.chi
 
 #   Same principal goes for HS_UAMHOMEPAGE.
-HS_UAMHOMEPAGE=http://DOMAINNAME:\$HS_UAMPORT/www/coova.html
+HS_UAMHOMEPAGE=http://hotspot.DOMAINNAME:\$HS_UAMPORT/www/coova.html
 
 #   This option will be configured to be the WISPr LoginURL as well
 #   as provide "uamService" to the ChilliController. The UAM Service is
