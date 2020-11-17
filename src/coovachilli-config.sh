@@ -44,7 +44,7 @@ coovachilli_config(){
     grep -rli IPGATEWAY /etc/chilli/config | xargs -i@ sed -i s+IPGATEWAY+${GATEWAY}+g @
     grep -rli SSIDNAME /etc/chilli/config | xargs -i@ sed -i s+SSIDNAME+${SSID}+g @
     grep -rli PASSRAD /etc/chilli/config | xargs -i@ sed -i s+PASSRAD+${RADIUSPASSWD}+g @
-    grep -rli DOMAINNAME /etc/chilli/config | xargs -i@ sed -i s+DOMAINNAME+${RADIUSPASSWD}+g @
+    grep -rli DOMAINNAME /etc/chilli/config | xargs -i@ sed -i s+DOMAINNAME+${DOMAIN}+g @
     echo -e "${GREEN}[ OK ] Configure coova!${NC}"
 
     systemctl enable chilli
