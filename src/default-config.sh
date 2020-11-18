@@ -11,7 +11,7 @@ NC='\033[0m'
 default_config(){
 ./src/banner.sh "Configure Default"
 
-    cp -r -v $(pwd)/default /etc
+    cp -r -v $(pwd)/default/* /etc/default/
     if [[ "$?" == 0 ]];then
         echo -e "${GREEN}[ OK ] Configure Default config!${NC}"
     else
