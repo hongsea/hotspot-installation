@@ -12,6 +12,7 @@ LANIP=$1
 LANNETMASK=$2
 LANGATEWAY=$3
 WIRELESS=$4
+echo "WIRELESS: $WIRELESS"
 
 ##dhcp
 dhcp_config(){
