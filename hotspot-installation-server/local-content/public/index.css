@@ -1,0 +1,100 @@
+body {
+	font-size: 1.5em;
+	line-height: 1.6;
+	font-weight: 400;
+	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+.box-shadow :hover {
+	box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.15),
+		-8px -8px 12px 0 hsla(0, 0%, 100%, 0.5);
+	transition: 0.5s;
+}
+
+.logo-header {
+	width: 37px;
+	height: 37px;
+}
+.appbox {
+	padding-bottom: 2%;
+	text-align: center;
+	height: 100%;
+}
+.appbox{	
+	float: left;
+	width: 30.6666666667%;
+	margin: 0 1.3333333333%;
+	box-sizing: border-box;
+}
+.appbox .logo{
+	width: 100%;
+	background: black;
+	padding-top: 100%;
+	border-radius: 8px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid #eee;
+	margin-bottom: 5px;
+}
+
+.appbox .title{
+	font-size: 1.5rem;
+	line-height: 1.6;
+	letter-spacing: 0;
+	height: 4.5rem;
+	overflow: hidden;
+}
+
+.appbox .border{
+	padding: 1.0rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+}
+.footer-heigth {
+	height: 400px;
+}
+
+.cards-container {
+	display: grid;
+	/* grid-template-columns: repeat(8, 150px); */
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-gap: 1rem;
+}
+
+.my-card {
+	height: calc(150px + 3rem);
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 0px;
+	padding: 1rem;
+	text-align: center;
+	border-radius: .6rem;
+	transition: ease-in 100ms;
+	cursor: pointer;
+}
+
+.my-card:hover {
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 10px 0px;
+	transform: translateY(-2px);
+}
+.logo-container {
+	width: calc(150px - 1rem);
+	height: calc(150px - 2rem);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.card-title {
+	height: 3rem;
+	padding: 1rem 0.5rem;
+}
+.my-card a {
+	font-size: 16px;
+	text-decoration: none;
+	color: #333333 !important;
+	font-weight: 700;
+}
+
+* {
+	box-sizing: border-box;
+}
