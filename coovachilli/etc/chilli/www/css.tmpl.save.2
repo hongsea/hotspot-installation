@@ -64,10 +64,6 @@ btn {
    padding: 3px;
 }
 
-a{
-   text-decoration: none;
-}
-
 li {
    color: #333;
    font: 400 0.8em verdana,arial,sans-serif;
@@ -117,7 +113,7 @@ h3 {
 }
 
 #submit {
-  width: 35%;
+  width: 30%;
   height: 40px;
   grid-row-start: 8/10;
   grid-row-end: 9/10;
@@ -130,9 +126,9 @@ h3 {
   transition: ease-in-out 200ms;
   margin: 4% auto;
   outline: none;
+  margin-right:17%;
   position: relative;
   top: -14px;
-  margin-right:11%;
 }
 
 #signup {
@@ -153,8 +149,8 @@ h3 {
 
 #logo{
   height: 67px;
-  /* position: relative;
-  top: 45px; */
+  position: relative;
+  top: 45px;
 }
 
 #profile{
@@ -164,7 +160,7 @@ h3 {
 }
 
 #login, #contact, #register, #map {
-   /* padding-bottom: 15px; */
+   padding-bottom: 15px;
    width: 80%;
    margin: auto;
    text-align: center;
@@ -185,8 +181,8 @@ h3 {
    grid-gap: 20px;
    align-items: center;
    justify-items: center;
-   /* position: relative;
-   top: 40px; */
+   position: relative;
+   top: 40px;
 }
 
 #header {
@@ -196,7 +192,7 @@ h3 {
    line-height: 80px;
    vertical-align: center;
    text-align: middle;
-   padding-top: 8%;
+   padding-top: 4%;
 
 }
 
@@ -234,12 +230,10 @@ h3 {
    font-weight: bold;
    color: crimson;
    width: 70%;
-   margin: 20px auto 10px auto;
+   margin: 0px auto 10px auto;
    font-size: 15px;
-   margin-top: 0;
-   /* position: absolute;
-   left: 55px;
-   top: 50px;*/
+   position:relative;
+   top: -11px;
 }
 
 
@@ -252,6 +246,11 @@ h3 {
   font-size: 13px;
 }
 
+#power-by{
+   position:relative;
+   top: 100px;
+}
+
 .K-1uj {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -259,7 +258,6 @@ h3 {
     -ms-flex-direction: row;
     flex-direction: row;
     display: -webkit-flex;
-
 }
 
 .Z7p_S {
@@ -300,27 +298,64 @@ h3 {
     display: -webkit-flex;
 }
 
-@media screen and (max-width:414px){
-    #submit {
-        margin-right: 12%;
-        position: relative;
-        top: -10px;
+/* Resonsive branch */
+@media screen and (max-width:1080px){
+    #submit{
+        margin-right: 16%;
     }
     #new-account {
-        padding-right: 80px;
-        position: relative;
-        top: 1px;
+         padding-right: 80px;
     }
-    #join-menu{
-       position: relative;
-       top:10px;
+}
+
+@media screen and (max-width:768px){
+    #submit{
+        margin-right: 16%;
     }
-    .Z7p_S {
-      margin: 5px 40px 18px;
-      position: relative;
-      top: 15px;
+    #new-account {
+        padding-right: 92px;
     }
-    #header{
-        padding-top: 17%;
+}
+
+@media screen and (max-width:640px){
+    #submit {
+        margin-right: 14%;
+    }
+
+    #new-account {
+        padding-right: 72px;
+    }
+    
+    #power-by {
+	top:120px
+    }
+}
+
+@media screen and (max-width:414px){
+    #submit{
+        margin-right: 17%;
+    }
+    #new-account {
+        padding-right: 88px;
+    }
+}
+
+
+@media screen and (max-width:375px){
+    #submit{
+        margin-right: 16%;
+    }
+    #new-account {
+        padding-right: 88px;
+    }
+}
+
+/*galaxy s5*/
+@media screen and (max-width:360px){
+    #submit{
+        margin-right: 16%;
+    }
+    #new-account {
+        padding-right: 88px;
     }
 }

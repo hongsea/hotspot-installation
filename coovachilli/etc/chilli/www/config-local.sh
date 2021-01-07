@@ -72,6 +72,8 @@ header() {
 
     echo "<meta http-equiv=\"Cache-control\" content=\"no-cache\"/>
 <meta http-equiv=\"Pragma\" content=\"no-cache\"/>
+<meta content="text/html"; charset="utf-8" http-equiv="Content-Type"/>
+<meta content="utf-8" http-equiv="encoding"/>
 <style>"
 
     uamfile "css" 0 
@@ -95,12 +97,14 @@ footer() {
     uamfile "footer" 1 
 
     echo "<table style=\"clear:both;margin:auto;padding-top:10px;\" height=\"30\">
-<tr><td valign=\"center\" align=\"center\" style=\"color:#666;font-size:60%;\">Powered by</td>
-<td valign=\"center\" align=\"center\"><a style=\"text-decoration:none\"; href=\"https://koompi.com/\"><h3 style=\"border=0\";>KOOMPI</h3></a>
+<tr><td valign=\"center\" id=\"power-by\" align=\"center\" style=\"color:#666;font-size:60%;\"></td>
+<td valign=\"center\" align=\"center\"><a style=\"text-decoration:none\"; href=\"https://koompi.com/\"></a>
 </td></tr></table></body></html>"
 }
 
-error() { echo "<div class=\"err\">$1</div>"; }
+error() { 
+   echo "<div class=\"err\"><p>$1</p></div>"
+}
 
 href() {
     echo "<a href=\"$1\">$2</a>"
@@ -205,8 +209,11 @@ chi_login_url() {
 dologin() {
     url=$(chi_login_url "$FORM_username" "$FORM_password" "$FORM_userurl")
     cat <<ENDHTML
-<html><head>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
 <meta http-equiv="refresh" content="0;url=$url"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head></html>
 ENDHTML
     wisprLoginResultsURL "$url"

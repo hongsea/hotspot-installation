@@ -31,12 +31,11 @@ else
     
     case "$FORM_res" in
 	success|already)
-	    url=$FORM_redirurl
-	    url=${url:-$FORM_userurl}
-	    header "<meta http-equiv=\"refresh\" content=\"5;url=${url}\"/>"
-	    uamfile "login_success" 1
+	    url=http://world.koompi.pi
+        header "<meta http-equiv=\"refresh\" content=\"0;url=${url}\"/>"
+        uamfile "login_success" 1
 	    footer
-	    exit
+        exit
 	    ;;
     esac
     
@@ -50,7 +49,7 @@ else
 	then
 	    error "$FORM_reply"
 	else
-	    error "Username and/or password was not valid"
+	    error "ឈ្មោះ ឬ ពាក្យសម្ងាត់របស់អ្នកមិនត្រឹមត្រូវ"
 	fi
     fi
     

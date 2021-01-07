@@ -162,7 +162,7 @@ listen {
 	      #
 	      #  The default is 16.
 	      #  Setting this to 0 means "no limit"
-	      max_connections = 0
+	      max_connections = 16
 
 	      #  The per-socket "max_requests" option does not exist.
 
@@ -182,7 +182,7 @@ listen {
 	      #
 	      #  We STRONGLY RECOMMEND that you set an idle timeout.
 	      #
-	      idle_timeout = 0
+	      idle_timeout = 30
 	}
 }
 
@@ -379,11 +379,6 @@ authorize {
 	#  uncomment it as well; this will further reduce the number of
 	#  LDAP and/or SQL queries for TTLS or PEAP.
 	#
-
-#	monthlycounter
-#	expiration
-#	accessperiod
-
 	eap {
 		ok = return
 #		updated = return
@@ -407,53 +402,7 @@ authorize {
 	#  is meant to mirror the "users" file.
 	#
 	#  See "Authorization Queries" in mods-available/sql
-	sql{
-		notfound = 1
-		reject = 2
-	}
-
-	#check notfound
-	if(notfound){
-		update reply{
-			Reply-Message := 'Login Faild, Please check your username and password. Thank You!'
-		}
-		reject
-	}
-
-	#check reject
-	if(reject){
-                update reply{
-                        Reply-Message := 'Login Faild, Please check your username and password. Thank You!'
-                }
-                reject
-        }
-
-	#check accessperiod
-	#accessperiod{
-	#	reject = 1
-	#}
-	#if (reject){
-	#	update reply{
-	#		Reply-Message := 'You have reached uptime limit. Please check your hotspot plan. Thank You!'
-	#	}
-	#reject
-	#}
-
-	#check expiration
-	expiration{
-	   userlock = 1
-	}
-	if (userlock){
-	   update reply{
-	       Reply-Message := 'Your account has expired. Please check your hotspot plan. Thank You!.'
-	   }
-	   reject
-	}
-
-#        quotalimit
-#        monthlycounter
-#	dailybandwidthcounter
-#	chillispot_max_bytes
+	-sql
 
 	#
 	#  If you are using /etc/smbpasswd, and are also doing
@@ -470,8 +419,8 @@ authorize {
 #	daily
 
 	#
-#	expiration
-#	logintime
+	expiration
+	logintime
 
 	#
 	#  If no other module has claimed responsibility for
@@ -688,7 +637,7 @@ accounting {
 	#  Log traffic to an SQL database.
 	#
 	#  See "Accounting queries" in mods-available/sql
-	sql
+	-sql
 
 	#
 	#  If you receive stop packets with zero session length,
@@ -730,7 +679,7 @@ session {
 
 	#
 	#  See "Simultaneous Use Checking Queries" in mods-available/sql
-	sql
+#	sql
 }
 
 
@@ -780,7 +729,7 @@ post-auth {
 	#  After authenticating the user, do another SQL query.
 	#
 	#  See "Authentication Logging Queries" in mods-available/sql
-	sql
+	-sql
 
 	#
 	#  Un-comment the following if you want to modify the user's object
@@ -879,7 +828,7 @@ post-auth {
 	#
 	Post-Auth-Type REJECT {
 		# log failed authentications in SQL, too.
-		sql
+		-sql
 		attr_filter.access_reject
 
 		# Insert EAP-Failure message if the request was
