@@ -1,4 +1,4 @@
-<h1 style=text-align:center;>KOOMPI Fi-Fi</h1>
+<h1 align="center">KOOMPI Fi-Fi</h1>
 
 <p align="center">
   <img src="img/Koompi-WiFi-Icon-ai.png" alt="mililogo" width="400">
