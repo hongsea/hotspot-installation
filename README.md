@@ -15,7 +15,7 @@ The internet allows small and large businesses to facilitate their work, utilize
 
 Students may not be able to afford any internet hotspot despite their growing need to learn and research. KOOMPI Fi-Fi also provide secure storage and internet connection. Nowadays, we already deployed this project to Saang School. In the future, we hope more schools can connect to KOOMPI Fi-Fi. 
 
-## Mobile App
+### Mobile App
 Be wherever KOOMPI Wifi is set up and instantly connect! 
 KOOMPI Hotspot is a mobile app that connects users to KOOMPI Wifi wherever it is available. 
 Be among the first 2000 users to get two months of free KOOMPI Hotspot plan! 
