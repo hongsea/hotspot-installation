@@ -85,7 +85,7 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
     INSERT INTO radcheck (username ,attribute ,op ,value ) VALUES ('user0', 'MD5-Password', ':=', MD5( '123'));
     ```
 
-    After cofig postgreSQL success you need restart freeradius.
+    After config postgreSQL success, you need restart freeradius.
 
     ```
     $ sudo systemctl restart freeradius
@@ -98,3 +98,8 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
     ```
 
     And then you can connect to Wifi that you put name when you install first and test login captive portal.
+
+<br>
+<p>
+<img src="img/captive-portal.jpg" alt="mililogo" width="300">
+</p>
