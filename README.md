@@ -31,6 +31,9 @@ LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 
 ## Installation
 
+*Note: This script will install freeradius server and client together.*
+
+
 **Requirement**
 
 + Raspberry pi 4
