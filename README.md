@@ -1,7 +1,7 @@
 <h1 style=text-align:center;>KOOMPI Fi-Fi</h1>
 
 <p align="center">
-  <img src="img/Koompi-WiFi-Icon-ai.png" alt="mili logo" width="400">
+  <img src="img/Koompi-WiFi-Icon-ai.png" alt="mililogo" width="400">
 </p>
 
 ## Introduction
