@@ -43,7 +43,7 @@ LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 
 For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running the latest available version of Raspberry Pi OS.
 
-**Preparing your Raspberry Pi for**
+**Preparing your Raspberry Pi for Install**
 
 1. Before we start, let us ensure that our operating system is entirely up to date.
 
@@ -67,7 +67,7 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
     
 
 
-3.  Add user to database
+3.  Configure PostgreSQL database for FreeRadius
 
     Open adminer to login postgreSQL:
 
@@ -75,6 +75,26 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
     http://127.0.0.1:8088
     ```
 
-    Enter a username and password when you first install. After login create a database name: `radius`
+    Enter a username and password when you first install. 
+    
+    After login create `radius` database. Generate database tables using postgresql schema by go to Import -> Broswe to file (in hotspot-installation/freeradius/3.0/mods-config/sql/main/postgresql/schema.sql) -> Execute.
 
-And then you can connect to Wifi that you put name when you install first and test connect
+    Go to "SQL command" and excute this sql command for add user.
+
+    ```
+    INSERT INTO radcheck (username ,attribute ,op ,value ) VALUES ('user0', 'MD5-Password', ':=', MD5( '123'));
+    ```
+
+    After cofig postgreSQL success you need restart freeradius.
+
+    ```
+    $ sudo systemctl restart freeradius
+    ```
+
+    And now to test you use the command.
+
+    ```
+    $ radtest usertest passwd localhost 0 radtesting123
+    ```
+
+    And then you can connect to Wifi that you put name when you install first and test login captive portal.
