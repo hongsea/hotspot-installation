@@ -56,8 +56,25 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
     ```
 
 2. Once your Raspberry Pi has finished updating, we can now install the KOOMPI Fi-Fi.
+
     ```
-    $ git clone https://github.com/koompi/hotspot-installation.git
+    $ git clone https://github.com/koompi/hotspot-installation.git -b server-client
     $ cd hotspot-installation && chmod +x install.sh
     $ ./install.sh
     ```
+
+    It will need some information after you have finished it, wait until it is install done and then restart it.
+    
+
+
+3.  Add user to database
+
+    Open adminer to login postgreSQL:
+
+    ```
+    http://127.0.0.1:8088
+    ```
+
+    Enter a username and password when you first install. After login create a database name: `radius`
+
+And then you can connect to Wifi that you put name when you install first and test connect
