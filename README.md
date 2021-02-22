@@ -42,3 +42,22 @@ LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 + Raspberry Pi Case
 
 For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running the latest available version of Raspberry Pi OS.
+
+**Preparing your Raspberry Pi for**
+
+1. Before we start, let us ensure that our operating system is entirely up to date.
+
+    To update everything, we need to type in the following two commands into the terminal.
+
+    ```console
+    $ sudo apt update
+    $ sudo apt full-upgrade
+    $ sudo reboot
+    ```
+
+2. Once your Raspberry Pi has finished updating, we can now install the KOOMPI Fi-Fi.
+    ```
+    $ git clone https://github.com/koompi/hotspot-installation.git
+    $ cd hotspot-installation && chmod +x install.sh
+    $ ./install.sh
+    ```
