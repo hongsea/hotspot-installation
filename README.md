@@ -29,17 +29,27 @@ Users can choose between two hotspot plans: 30 days or 365 days. Each user can c
 Google PlayStore  
 LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 
+
 ## Installation
 
 *Note: This script will install freeradius server and client together.*
 
-
 **Requirement**
+
+In order to build a captive portal solution, we will need the following:
 
 + Raspberry pi 4
 + Micro SD Card 16GB
 + Power Supply
 + Ethernet Cord or WiFi dongle (The Pi 3 and 4 has WiFi inbuilt)
++ Freeradius
++ PostgreSQL
++ Docker
++ Hostapd
++ CoovaChilli
++ Bind9
++ Nginx
++ 
 
 **Optional**
 + Raspberry Pi Case
