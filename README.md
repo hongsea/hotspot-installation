@@ -24,7 +24,7 @@ Be among the first 2000 users to get two months of free KOOMPI Hotspot plan!
 Users can purchase KOOMPI Hotspot plans using tokens from their wallet.
 Users can choose between two hotspot plans: 30 days or 365 days. Each user can connect up to two devices at 5MB per device. 
 
-### Google Playstore link: https://play.google.com/store/apps/details?id=com.koompi.hotspot
+Google Playstore link: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 
 ## Installation
 
