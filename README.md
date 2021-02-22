@@ -99,7 +99,14 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
 
     And then you can connect to Wifi that you put name when you install first and test login captive portal.
 
+<h2 align="center">Mobile Phone</h2>
 <br>
-<p>
+<p align="center">
 <img src="img/captive-portal.jpg" alt="mililogo" width="300">
+</p>
+
+<br>
+<h2 align="center">PC Computer</h2>
+<p align="center">
+<img src="img/pccomputer.png" alt="mililogo" width="600">
 </p>
