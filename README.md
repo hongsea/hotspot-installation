@@ -113,11 +113,11 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
 
 <h2 align="center">Mobile Phone</h2>
 <p align="center">
-<img src="img/captive-portal.jpg" alt="mililogo" width="300">
+<img src="img/captive-portal1.jpg" alt="mililogo" width="300">
 </p>
 
 <br>
 <h2 align="center">PC Computer</h2>
 <p align="center">
-<img src="img/pccomputer.png" alt="mililogo" width="700">
+<img src="img/pccomputer1.png" alt="mililogo" width="700">
 </p>
