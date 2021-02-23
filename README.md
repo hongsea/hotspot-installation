@@ -54,6 +54,7 @@ In order to build a captive portal solution, we will need the following:
 + CoovaChilli
 + Bind9
 + Nginx
++ PHP-FPM
 
 **Optional**
 + Raspberry Pi Case
