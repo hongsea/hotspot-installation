@@ -31,9 +31,9 @@ LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 
 ### Fix Bug
 
-[x] Session expriy 15s after user disconnect.  
-[x] Freeradius stack when connect to database.   
-[x] Https access captive portal.  
+- [x] Session expriy 15s after user disconnect.  
+- [x] Freeradius stack when connect to database.   
+- [x] Https access captive portal.  
 
 ## Installation
 
