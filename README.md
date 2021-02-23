@@ -37,8 +37,6 @@ LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 
 ## Installation
 
-*Note: This script will install freeradius server and client together.*
-
 **Requirement**
 
 In order to build a captive portal solution, we will need the following:
