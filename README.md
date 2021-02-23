@@ -29,6 +29,11 @@ Users can choose between two hotspot plans: 30 days or 365 days. Each user can c
 Google PlayStore  
 LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 
+### Fix Bug
+
++  Session expriy 15s after user disconnect  
++  Freeradius stack when connect to database   
++  Access https with captive portal login  
 
 ## Installation
 
