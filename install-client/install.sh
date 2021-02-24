@@ -95,5 +95,8 @@ $(pwd)/src/captive-portal-config.sh  "$RADIUSPASSWD"
 ##Configure nginx web server
 $(pwd)/src/nginx-config.sh "$DOMAIN"
 
+##Configure systemd service
+$(pwd)/src/systemd-config.sh
+
 ##Configure bind file
 $(pwd)/src/bind-config.sh "$DOMAIN" "$LANIP"
