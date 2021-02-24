@@ -1,0 +1,230 @@
+* {
+  /* box-sizing: border-box; */
+  font-family: 'Battambang', 'alibaba-sans' !important;
+}
+
+@font-face {
+  font-family:"Battambang";
+  src: url("../../../fonts/Battambang-Regular.ttf") format("truetype");
+}
+
+.alert-wrapper {    
+  margin-top: 10px;
+}
+
+.login-respons {
+  color: #ffffff;
+}
+
+.wrapper {    
+  margin-top: 80px;
+  margin-bottom: 20px;
+
+  /* display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 100px; */
+}
+
+  /* background-color: #eee; */
+  /* border: 3px dotted rgba(0,0,0,0.1);   */
+.form-signin {
+  position: relative;
+  max-width: 420px;
+  /* padding: 30px 38px 66px; */
+  margin: -40px auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+
+  box-shadow: rgba(0, 0, 0, 0.5) 15px 15px 80px -30px;
+  border-radius:  8px;
+}
+
+.form-signin-heading {
+  text-align:center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: 47px;
+  padding: 10px;
+  /* border-radius: 17px; */
+
+}
+
+#user {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  background: url(../../../images/user.png)no-repeat 15px 13px #fff;
+  border: 1px solid rgba(121, 80, 242, 1);
+  border-radius:  8px;
+  margin: 2% auto;
+  outline: none;
+  padding: 10px;
+  padding-left: 46px;
+  font-weight: unset;
+}
+
+#password {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  background: url(../../../images/key.png)no-repeat 15px 13px #fff;
+  border: 1px solid rgba(121, 80, 242, 1);
+  border-radius:  8px;
+  margin: 4% auto;
+  outline: none;
+  padding: 10px;
+  padding-left: 46px;
+}
+
+#btnlogin{
+  margin: 2% auto;
+  width: 40%;
+  height: 55px;
+  text-align: center !important;
+  border: none;
+  border-radius: 8px;
+  background: #85CFCC;
+  color: #ffffff;
+  font-weight: bold;
+  transition: ease-in-out 200ms;
+  /* margin: 4% auto; */
+  outline: none;
+  /* margin-left: 0px; */
+}
+
+#formFooter {
+  background-color: #f6f6f6;
+  border-top: 1px solid #dce8f1;
+  padding: 20px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+  margin: 10% auto;
+}
+
+input[type="text"] {
+  margin-bottom: 0px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.colorgraph {
+  height: 7px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fadeIn {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+} 
+
+#icon {
+  width:45%;
+
+}
+
+
