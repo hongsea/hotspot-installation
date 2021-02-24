@@ -26,3 +26,5 @@ bind9
 bind9utils
 dnsutils
 nginx
+php
+php-fpm
