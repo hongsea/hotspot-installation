@@ -403,37 +403,39 @@ authorize {
 	#  is meant to mirror the "users" file.
 	#
 	#  See "Authorization Queries" in mods-available/sql
-	sql{
-		notfound = 1
-		reject = 2
-	}
-
-	#check notfound
-	if(notfound){
-		update reply{
-			Reply-Message := 'Login Faild, Please check your username and password. Thank You!'
-		}
-		reject
-	}
-
-	#check reject
-	if(reject){
-                update reply{
-                        Reply-Message := 'ឈ្មេាះ ​ឬ ​ពាក្យសម្ងាត់​មិន​ត្រឹមត្រូវ'
-                }
-                reject
+        sql {
+                notfound = 1
+                reject = 2
         }
 
-	#check expiration
-	expiration{
-	   userlock = 1
-	}
-	if (userlock){
-	   update reply{
-	       Reply-Message := 'គណនីរបស់អ្នកត្រូវបានផុតកំណត់ សូមពិនិត្យមើលគំរោងរបស់អ្នក អរគុណ'
-	   }
-	   reject
-	}
+        #check notfound
+        if (notfound) {
+             update reply {
+                 Reply-Message := 'ឈ្មោះ ឬ ពាក្យសម្ងាត់មិនត្រឹមត្រូវ'
+                  #Reply-Message := 'wrong password'
+             }
+             reject
+        }
+
+        #check reject
+        if (reject) {
+             update reply {
+                 Reply-Message := 'ឈ្មោះ ឬ ពាក្យសម្ងាត់មិនត្រឹមត្រូវ'
+             }
+             reject
+        }
+
+        #check expiration
+        expiration{
+           userlock = 1
+        }
+        if (userlock){
+           update reply{
+#              Reply-Message := 'Your account has expired. Please check your hotspot plan. Thank You!.'
+               Reply-Message := "គណនីរបស់អ្នកត្រូវបានផុតកំណត់"
+           }
+           reject
+        }
 
 	#
 	#  If you are using /etc/smbpasswd, and are also doing

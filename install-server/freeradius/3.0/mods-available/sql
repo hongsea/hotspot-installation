@@ -94,7 +94,7 @@ sql {
 	password = "PASSWORDLOGIN"
 
 	# Database table configuration for everything except Oracle
-	radius_db = "radius"
+	radius_db = "DATABASES"
 
 	# If you are using Oracle then use this instead
 #	radius_db = "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SID=your_sid)))"
