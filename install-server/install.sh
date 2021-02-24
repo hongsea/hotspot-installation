@@ -18,6 +18,7 @@ check_root
 echo "Connection info sql"
 read -p "Server[]: " IPSERVERRADIUS
 read -p "Port[]: " PORT
+read -p "Database Name: " DATABASE
 read -p "SQLUsername: " SQLUSERNAME
 read -p "SQLPassword: " SQLPASSWORD
 read -p "Radius password[]: " RADIUSPASSWD
@@ -29,5 +30,5 @@ $(pwd)/src/localtime-config.sh
 $(pwd)/src/package-install.sh
 
 ##Configure freeradius file
-$(pwd)/src/freeradius-config.sh "$IPSERVERRADIUS" "$PORT" "$SQLUSERNAME" "$SQLPASSWORD" "$RADIUSPASSWD"
+$(pwd)/src/freeradius-config.sh "$IPSERVERRADIUS" "$PORT" "$SQLUSERNAME" "$SQLPASSWORD" "$RADIUSPASSWD" "$DATABASE"
 

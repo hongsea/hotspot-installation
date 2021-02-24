@@ -13,6 +13,7 @@ PORT=$2
 USERNAME=$3
 PASSWORD=$4
 RADIUSPASSWD=$5
+DATABASE=$6
 
 ##freeradius
 freeradius_config(){
@@ -36,6 +37,7 @@ freeradius_config(){
     grep -rli PORTNUMBER /etc/freeradius/3.0/mods-available/sql | xargs -i@ sed -i s+PORTNUMBER+${PORT}+g @
     grep -rli USERNAME /etc/freeradius/3.0/mods-available/sql | xargs -i@ sed -i s+USERNAME+${USERNAME}+g @
     grep -rli PASSWORDLOGIN /etc/freeradius/3.0/mods-available/sql | xargs -i@ sed -i s+PASSWORDLOGIN+${PASSWORD}+g @
+    grep -rli DATABASES /etc/freeradius/3.0/mods-available/sql | xargs -i@ sed -i s+DATABASES+${DATABASE}+g @
     echo -e "${GREEN}[ OK ] Configure freeradius sql!${NC}"
 
     ln -s /etc/freeradius/3.0/sites-avaiable/default /etc/freeradius/3.0/sites-enabled/default
