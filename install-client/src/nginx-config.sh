@@ -22,6 +22,7 @@ nginxc(){
     nginx -t
     grep -rli DOMAINNAME /etc/nginx/sites-available/hotspot.koompi.pi.conf | xargs -i@ sed -i s+DOMAINNAME+${DOMAIN}+g @
     
+    systemctl disable apache2.service
     systemctl enable nginx php-fpm
     systemctl start nginx php-fpm
 
