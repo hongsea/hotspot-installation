@@ -103,6 +103,8 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
 
     ```
     INSERT INTO radcheck (username ,attribute ,op ,value ) VALUES ('user0', 'MD5-Password', ':=', MD5( '123'));
+    INSERT INTO radcheck (username ,attribute ,op ,value ) VALUES ('user5', 'Simultaneous-Use', ':=', '1');
+    INSERT INTO radcheck (username ,attribute ,op ,value ) VALUES ('user5', 'Expiration', ':=', 'June 19 2020 12:52:00 +07');
     ```
 
     After config postgreSQL success, you need restart freeradius.
