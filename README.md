@@ -31,9 +31,13 @@ LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 
 ### Fix Bug
 
-+  Session expriy 15s after user disconnect  
-+  Freeradius stack when connect to database   
-+  Access https with captive portal login  
++  Fix user relogin after connect lost.
++  Can set time Accounting Request. 
++  Fix checking hotspot plan in database.
+
+### New Features
+
++  User access local website without login.
 
 ## Installation
 
@@ -99,6 +103,8 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
 
     ```
     INSERT INTO radcheck (username ,attribute ,op ,value ) VALUES ('user0', 'MD5-Password', ':=', MD5( '123'));
+    INSERT INTO radcheck (username ,attribute ,op ,value ) VALUES ('user5', 'Simultaneous-Use', ':=', '1');
+    INSERT INTO radcheck (username ,attribute ,op ,value ) VALUES ('user5', 'Expiration', ':=', 'June 19 2020 12:52:00 +07');
     ```
 
     After config postgreSQL success, you need restart freeradius.
