@@ -130,10 +130,10 @@ HS_UAMHOMEPAGE=http://hotspot.DOMAINNAME:\$HS_UAMPORT/prelogin
 #
 # HS_DEFSESSIONTIMEOUT=0   # Default session-timeout if not defined by RADIUS (0 for unlimited)
 #
-HS_DEFIDLETIMEOUT=10      # Default idle-timeout if not defined by RADIUS (0 for unlimited)
-#
+#HS_DEFIDLETIMEOUT=10      # Default idle-timeout if not defined by RADIUS (0 for unlimited)
+#5MB Download
 HS_DEFBANDWIDTHMAXDOWN=5242880   # Default WISPr-Bandwidth-Max-Down if not defined by RADIUS (0 for unlimited)
-#
+#5MB Upload
 HS_DEFBANDWIDTHMAXUP=5242880           # Default WISPr-Bandwidth-Max-Up if not defined by RADIUS (0 for unlimited)
 
 ###
