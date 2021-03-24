@@ -4,3 +4,6 @@
 [submodule "koompi-hotspot-mobile"]
 	path = koompi-hotspot-mobile
 	url = https://github.com/sokunsamnang/koompi-hotspot-mobile.git
+[submodule "ipfs"]
+	path = ipfs
+	url = https://github.com/koompi/ipfs.git
