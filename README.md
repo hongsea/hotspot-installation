@@ -31,9 +31,9 @@ LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 
 ### Fix Bug
 
-+  Fix user relogin after connect lost.
-+  Can set time Accounting Request. 
-+  Fix checking hotspot plan in database.
+- [x] Fix user relogin after connect lost.
+- [x] Can set time Accounting Request. 
+- [x] Fix checking hotspot plan in database.
 
 ### New Features
 
