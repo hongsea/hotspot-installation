@@ -158,7 +158,7 @@ HS_DEFBANDWIDTHMAXUP=5242880           # Default WISPr-Bandwidth-Max-Up if not d
 # The up.sh script will allow these local ports to be used, while the default
 # is to block all unwanted traffic to the tun/tap. 
 #
-HS_TCP_PORTS="80 443"
+HS_TCP_PORTS="80 443 53"
 # HS_UDP_PORTS="1701"
 
 ###
@@ -212,7 +212,7 @@ HS_RAD_PROTO="pap" # or mschapv2, chap
 # HS_USE_MAP=on
 
 
-
+HS_LAYER3=off
 
 
 
