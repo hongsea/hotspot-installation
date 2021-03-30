@@ -19,11 +19,11 @@ function website(){
     
     echo -e "${GREEN}[ RUN ] Website: world.koompi.org${NC}"
     cd /var/www/world.koompi.org/
-    
+
+    npm install
     sudo npm install pm2
     echo -e "${GREEN}[ OK ] Install pm2.${NC}"
 
-    npm install
     pm2 --name world.koompi.org start npm index.js
     pm2 save
     echo -e "${GREEN}[ RUNNING ] world.koompi.org${NC}"
