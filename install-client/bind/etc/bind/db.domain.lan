@@ -9,5 +9,5 @@ $TTL 86400
 @               IN      NS      DOMAINNAME.
                 IN      A       IPLAN
                 IN      MX 10   DOMAINNAME.
-redirect        IN      CNAME   DOMAINNAME.
 hotspot         IN      CNAME   DOMAINNAME.
+world           IN      CNAME   DOMAINNAME.

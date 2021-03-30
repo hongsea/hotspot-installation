@@ -65,7 +65,8 @@
   width: 80%;
   height: 50px;
   background: url(../../../images/user.png)no-repeat 15px 13px #fff;
-  border: 1px solid rgba(121, 80, 242, 1);
+  /* border: 1px solid rgba(121, 80, 242, 1); */
+  border: 1px solid #0CAEDC;
   border-radius:  8px;
   margin: 2% auto;
   outline: none;
@@ -79,7 +80,7 @@
   width: 80%;
   height: 50px;
   background: url(../../../images/key.png)no-repeat 15px 13px #fff;
-  border: 1px solid rgba(121, 80, 242, 1);
+  border: 1px solid #0CAEDC;
   border-radius:  8px;
   margin: 4% auto;
   outline: none;
@@ -94,7 +95,7 @@
   text-align: center !important;
   border: none;
   border-radius: 8px;
-  background: #85CFCC;
+  background: #0CAEDC;
   color: #ffffff;
   font-weight: bold;
   transition: ease-in-out 200ms;
@@ -223,8 +224,13 @@ input[type="password"] {
 } 
 
 #icon {
-  width:45%;
+  width:33%;
+  margin-top:33px;
 
 }
 
+h3{
+  margin-top: 20px;
+  color: #0CAEDC;
+}
 

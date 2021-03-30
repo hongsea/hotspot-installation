@@ -90,10 +90,10 @@ $(pwd)/src/hostapd-config.sh "$SSID" "$WIRELESS"
 $(pwd)/src/coovachilli-config.sh "$WIRE" "$WIRELESS" "$LANIP" "$LANNETMASK" "$LANGATEWAY" "$SSID" "$RADIUSPASSWD" "$DOMAIN" "$RADIUSSERVER"
 
 ##Configure captive portal login
-$(pwd)/src/captive-portal-config.sh  "$RADIUSPASSWD"
+$(pwd)/src/captive-portal-config.sh  "$RADIUSPASSWD" "$DOMAIN"
 
 ##Configure nginx web server
-$(pwd)/src/nginx-config.sh "$DOMAIN"
+$(pwd)/src/nginx-config.sh "$DOMAIN" "$RADIUSSERVER"
 
 ##Configure systemd service
 $(pwd)/src/systemd-config.sh
