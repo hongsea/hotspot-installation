@@ -67,14 +67,14 @@ do
     read -p "Radius password[]: " RADIUSPASSWD
 done
 
-# ##CONFIGURE LOCATIME ZONE FILE
-# $(pwd)/src/localtime-config.sh
+##CONFIGURE LOCATIME ZONE FILE
+$(pwd)/src/localtime-config.sh
 
 ##PACKGE INSTALL FILE
 $(pwd)/src/package-install.sh
 
-# ##CONFIGURE FREERADIUS FILE
-# $(pwd)/src/freeradius-config.sh "$IPSERVERRADIUS" "$PORT" "$SQLUSERNAME" "$SQLPASSWORD" "$RADIUSPASSWD" "$DATABASE"
+##CONFIGURE FREERADIUS FILE
+$(pwd)/src/freeradius-config.sh "$IPSERVERRADIUS" "$PORT" "$SQLUSERNAME" "$SQLPASSWORD" "$RADIUSPASSWD" "$DATABASE"
 
 ##WEBSITE
 $(pwd)/src/website.sh
