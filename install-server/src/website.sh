@@ -10,7 +10,7 @@ NC='\033[0m'
 function website(){
 ./src/banner.sh "Running website"
 
-    sudo cp ./local-content /var/www/
+    sudo cp -r ./local-content /var/www/
     echo -e "${GREEN}[ OK ] Copy source code.${NC}"
 
     npm install pm2
