@@ -28,3 +28,4 @@ function website(){
     echo -e "${GREEN}[ RUNNING ] world.koompi.org${NC}"
 }
 
+website
