@@ -19,12 +19,6 @@ DATABASE=$6
 freeradius_config(){
 ./src/banner.sh "Configure freeradius"
 
-    # #sql Connection info
-    # echo "Connection info sql"
-    # read -p "Server[]: " IPSERVER
-    # read -p "Port[]: " PORT
-    # read -p "Radius password[]: " RADIUSPASSWD
-
     cp -r -v $(pwd)/freeradius /etc/
     if [[ "$?" == 0 ]];then
         echo -e "${GREEN}[ OK ] Copy config.${NC}"
@@ -52,7 +46,8 @@ freeradius_config(){
     rm -rf /etc/freeradius/3.0/mods-enabled/expiration
     systemctl enable freeradius
     systemctl restart freeradius
-    echo -e "${GREEN}[ OK ] Start service freeradius!${NC}"
+    service=$(sudo systemctl is-active freeradius)
+    echo -e "${GREEN}[ OK ] Freeradius is $service !${NC}"
 
 }
 

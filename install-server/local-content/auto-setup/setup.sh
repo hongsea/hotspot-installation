@@ -1,16 +1,24 @@
 #!/bin/bash
 
+echo "Install pm2"
+npm install pm2
+
+echo "pm2 startup"
+GET=$(pm2 startup | grep sudo)
+$GET
+
 VITAMINIR="/var/www/local-content/vitaminair.koompi.lan"
 REPO_VITAMINIR=VitaminAir
-SMALLWORLD="/var/www/local-content/smallworld.koompi.lan"
-REPO_SMALLWORLD=
-KOOMPIDOCS="/var/www/local-content/www.koompi.org"
-KOOMPIOFFICIAL="/var/www/local-content/www.koompi.com"
+
+FIFIPATH="/var/www/local-content/world.koompi.org"
 
 #Set up website vitaminir
 #vitaminir.koompi.lan
-$(pwd)/vitaminir.sh $VITAMINIR $REPO_VITAMINIR
+# $(pwd)/vitaminir.sh $VITAMINIR $REPO_VITAMINIR
 
 #Set up website smallworld venture
-#smallworld.koompi.lan
+#world.koompi.org
 # $(pwd)/smallworldventure.sh $SMALLWORLD $REPO_SMALLWORLD
+
+#Set up website world.koompi.org
+$(pwd)/world.koompi.org.sh $FIFIPATH

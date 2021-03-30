@@ -129,7 +129,9 @@ sql {
 
 	# If set to 'yes' (default) we read the group tables unless Fall-Through = no in the reply table.
 	# If set to 'no' we do not read the group tables unless Fall-Through = yes in the reply table.
-#	read_groups = yes
+	
+	#changed
+	read_groups = yes
 
 	# If set to 'yes' (default) we read profiles unless Fall-Through = no in the groupreply table.
 	# If set to 'no' we do not read profiles unless Fall-Through = yes in the groupreply table.
@@ -144,7 +146,7 @@ sql {
 	# by enabling "logfile" there, or global logging by enabling "logfile" here.
 	#
 	# Per-section logging can be disabled by setting "logfile = ''"
-#	logfile = ${logdir}/sqllog.sql
+	logfile = ${logdir}/sqllog.sql
 
 	#  Set the maximum query duration and connection timeout
 	#  for rlm_sql_mysql.
