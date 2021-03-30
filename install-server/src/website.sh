@@ -21,7 +21,7 @@ function website(){
     cd /var/www/world.koompi.org/
 
     npm install
-    sudo npm install pm2
+    sudo npm install -g pm2 
     echo -e "${GREEN}[ OK ] Install pm2.${NC}"
 
     pm2 --name world.koompi.org start npm index.js
