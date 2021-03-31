@@ -9,7 +9,7 @@ rfkill unblock all
 ##run as root
 check_root(){
     if [[ $(id -u) != 0 ]]; then
-        echo "This script run as root."
+        echo -e "${RED}This script run as root.${NC}"
         exit;
     fi
 }
