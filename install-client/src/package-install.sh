@@ -17,7 +17,7 @@ package_install(){
         if [ $? -eq 0 ]; then
             echo -e "${GREEN}[ OK ] Package ${PKG} is installed!${NC}"
         else
-            echo -e "${GREEN}[ Check ] Installing ${PKG}...!${NC}"
+            echo -e "${GREEN}[ INSTALL ] Installing ${PKG}...!${NC}"
             apt-get install -y ${PKG}
             echo -e "${GREEN}[ OK ] Package ${PKG} is installed!${NC}"
         fi
