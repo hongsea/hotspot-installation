@@ -3,6 +3,14 @@
 ##This script run for install KOOMPI Fi-Fi.
 ##It management by Hongsea Heng.
 
+##Color
+RED='\033[0;31m'
+GREEN='\e[32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;32m'
+NC='\033[0m'
+
+
 ##Enable wireless wifi
 rfkill unblock all
 
