@@ -34,7 +34,7 @@ HS_DNS2=8.8.8.8
 ###
 #   HotSpot settings for simple Captive Portal
 #
-HS_NASID=nas01
+HS_NASID=STATIONID
 HS_RADIUS=RADIUSSERVER
 HS_RADIUS2=localhost
 

@@ -48,7 +48,7 @@ read -p "SSID Name[]: " SSID
 ##freeradius-config.sh input
 read -p "Freeradius Server[]: " RADIUSSERVER
 read -p "Freeradius Password[]: " RADIUSPASSWD
-
+read -p "Station ID[]: " STATIONID
 ##bond-config.sh input
 echo "Hotspot Domain"
 read -p "Domain[Example: domain.com]: " DOMAIN
@@ -87,7 +87,7 @@ $(pwd)/src/hostapd-config.sh "$SSID" "$WIRELESS"
 # $(pwd)/src/freeradius-config.sh "$IPSERVERRADIUS" "$PORT" "$SQLUSERNAME" "$SQLPASSWORD" "$RADIUSPASSWD"
 
 ##Configure chilli file
-$(pwd)/src/coovachilli-config.sh "$WIRE" "$WIRELESS" "$LANIP" "$LANNETMASK" "$LANGATEWAY" "$SSID" "$RADIUSPASSWD" "$DOMAIN" "$RADIUSSERVER"
+$(pwd)/src/coovachilli-config.sh "$WIRE" "$WIRELESS" "$LANIP" "$LANNETMASK" "$LANGATEWAY" "$SSID" "$RADIUSPASSWD" "$DOMAIN" "$RADIUSSERVER" "STATIONID"
 
 ##Configure captive portal login
 $(pwd)/src/captive-portal-config.sh  "$RADIUSPASSWD" "$DOMAIN"
