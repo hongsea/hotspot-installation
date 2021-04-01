@@ -12,6 +12,7 @@ DOMAIN=$1
 LANIP=$2
 
 bind-config(){
+./src/banner.sh "Config Bind9"    
     REVERSE=$(echo $LANIP | awk -F. '{OFS="."; print $3,$2,$1}')
     IPEND=$(echo $LANIP | awk -F. '{OFS="."; print $4}')
 

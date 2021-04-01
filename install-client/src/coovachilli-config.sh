@@ -55,7 +55,8 @@ coovachilli_config(){
     systemctl stop chilli
     sleep 5
     systemctl start chilli
-    echo -e "${GREEN}[ OK ] Start service chilli"
+    STATUS=$(systemctl is-active chilli)
+    echo -e "${GREEN}[ ${STATUS} ] Start service chilli!"
 
 }
 

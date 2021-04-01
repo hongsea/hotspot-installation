@@ -41,16 +41,16 @@ dhcp_config(){
     fi
 
     cp -v $(pwd)/dhcp/dhcpd.conf /etc/dhcp/
+    if [[ "$?" == 0 ]]; then
+        echo -e "${GREEN}[ OK ] Configure dhcp!${NC}"
+    else
+        echo -e "${RED}[ Failed ] Configure dhcp!${NC}"
+    fi    
     grep -rli IPNETWORK /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPNETWORK+${NETWORK}+g @
     grep -rli IPSUBNET /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPSUBNET+${SUBNET}+g @
     grep -rli IPRANK /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPRANK+"${RANK}"+g @
     grep -rli IPGATEWAY /etc/dhcp/dhcpd.conf | xargs -i@ sed -i s+IPGATEWAY+${GATEWAY}+g @
     grep -rli LANINTERFACE /etc/default/isc-dhcp-server | xargs -i@ sed -i s+LANINTERFACE+${WIRELESS}+g @
-    if [[ "$?" == 0 ]]; then
-        echo -e "${GREEN}[ OK ] Configure dhcp${NC}"
-    else
-        echo -e "${RED}[ Failed ] Configure dhcp${NC}"
-    fi
 
     systemctl disable dhcpcd
     systemctl enable isc-dhcp-server

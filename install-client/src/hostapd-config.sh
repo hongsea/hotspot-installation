@@ -31,7 +31,8 @@ hostapd_config(){
     systemctl unmask hostapd.service
     systemctl enable hostapd.service
     systemctl start hostapd.service
-    echo -e "${GREEN}[ OK ] Start service hostapd!${NC}"
+    STATUS=$(systemctl is-active hostapd.service)
+    echo -e "${GREEN}[ ${STATUS} ] Start service hostapd!${NC}"
     
 }
 

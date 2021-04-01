@@ -23,7 +23,9 @@ captive-portal(){
     grep -rli CHILLISHARESCREIT /var/www/hotspot.$DOMAIN/hotspotlogin.php | xargs -i@ sed -i s+CHILLISHARESCREIT+${SHARESCREIT}+g @
     grep -rli DOMAIN /var/www/hotspot.$DOMAIN/hotspotlogin.php | xargs -i@ sed -i s+DOMAIN+${DOMAIN}+g @
     grep -rli DOMAIN /var/www/hotspot.$DOMAIN/template/default/login-successful.php | xargs -i@ sed -i s+DOMAIN+${DOMAIN}+g @
-
-    echo -e "${RED}[ OK ] Config successful!${NC}"
+    
+    echo -e "${GREEN}[ OK ] Config successful!${NC}"
+    STATUS=$(systemctl is-active php7.3-fpm.service)
+    echo -e "${GREEN}[ ${STATUS} ] Status php-fpm service!"
 }
 captive-portal
