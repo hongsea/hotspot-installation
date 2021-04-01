@@ -21,6 +21,7 @@ nginxc(){
     fi
 
     sudo mv /etc/nginx/sites-available/hotspot.koompi.pi.conf /etc/nginx/sites-available/hotspot.$DOMAIN.conf
+    sudo mv /etc/nginx/sites-available/world.koompi.pi.conf /etc/nginx/sites-available/world.$DOMAIN.conf
     ln -s /etc/nginx/sites-available/* /etc/nginx/sites-enabled/
     nginx -t
     grep -rli DOMAINNAME /etc/nginx/sites-available/hotspot.$DOMAIN.conf | xargs -i@ sed -i s+DOMAINNAME+${DOMAIN}+g @

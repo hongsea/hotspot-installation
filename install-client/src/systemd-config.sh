@@ -20,7 +20,7 @@ systemd(){
     sudo systemctl restart nginx
     STATUS=$(systemctl is-active nginx)
     echo -e "${GREEN}[ OK ] Config successful!${NC}"
-    echo -e "${GREEN} [ ${STATUS} ] Start nginx service!"
+    echo -e "${GREEN}[ ${STATUS} ] Start nginx service!"
 }
 systemd
 

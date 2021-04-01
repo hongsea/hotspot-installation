@@ -56,7 +56,7 @@ echo "
             
             <!-- footer -->
             <div id='formFooter'>
-            <a href='https://world.koompi.org'>មីនុយគេហទំព័រ</a>
+            <a href='https://world.DOMAIN'>មីនុយគេហទំព័រ</a>
             </div>
         </form>        
     </div>

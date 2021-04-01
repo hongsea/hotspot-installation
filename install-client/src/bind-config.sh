@@ -40,8 +40,9 @@ bind-config(){
 
     systemctl enable bind9.service
     systemctl restart bind9.service
+    STATUS=$(systemctl is-active bind9.service)
 
-    echo -e "${GREEN}[ OK ] Configure bind success.${NC}"
+    echo -e "${GREEN}[ ${STATUS} ] Configure bind success!${NC}"
 }
 
 bind-config
