@@ -28,3 +28,4 @@ dnsutils
 nginx
 php
 php-fpm
+sshpass
