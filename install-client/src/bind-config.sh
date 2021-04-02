@@ -12,6 +12,7 @@ DOMAIN=$1
 LANIP=$2
 
 bind-config(){
+./src/banner.sh "Config Bind9"    
     REVERSE=$(echo $LANIP | awk -F. '{OFS="."; print $3,$2,$1}')
     IPEND=$(echo $LANIP | awk -F. '{OFS="."; print $4}')
 
@@ -39,8 +40,9 @@ bind-config(){
 
     systemctl enable bind9.service
     systemctl restart bind9.service
+    STATUS=$(systemctl is-active bind9.service)
 
-    echo -e "${GREEN}[ OK ] Configure bind success.${NC}"
+    echo -e "${GREEN}[ ${STATUS} ] Configure bind success!${NC}"
 }
 
 bind-config

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="../../js/sweetalert.min.js"></script>
+    <script>
+        function sleep(milliseconds) {
+            const date = Date.now();
+            let currentDate = null;
+            do {
+                currentDate = Date.now();
+            } while (currentDate - date < milliseconds);
+        }
+
+        function JSalert(){        
+            swal({
+                title: "អបអរសារទរ !",
+                text: "ការផ្ទៀងផ្ទាត់អត្តសញ្ញាណរបស់អ្នកបានជោគជ័យ",
+                type: "success",
+                timer: 2000,
+                icon: "success",
+                button: false
+            }).then(function() {
+                location.replace("https://world.koompi.org")
+            });
+        }
+    </script>
+</head>
+<body onload="JSalert()">
+    
+</body>
+</html>

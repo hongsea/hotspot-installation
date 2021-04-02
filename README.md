@@ -26,6 +26,11 @@ Be among the first 2000 users to get two months of free KOOMPI Hotspot plan!
     Users can purchase KOOMPI Hotspot plans using tokens from their wallet.
 Users can choose between two hotspot plans: 30 days or 365 days. Each user can connect up to two devices at 5MB per device. 
 
+<h2 align="center"></h2>
+<p align="center">
+<img src="img/Thumbnail3.png" alt="mililogo" width="1080">
+</p><br>
+
 Google PlayStore  
 LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 
@@ -34,6 +39,9 @@ LINK: https://play.google.com/store/apps/details?id=com.koompi.hotspot
 - [x] Fix user relogin after connect lost.
 - [x] Can set time Accounting Request. 
 - [x] Fix checking hotspot plan in database.
+- [x] Fix message login error and message buy hotspot plan
+- [x] Fix ssl HTTPS show error message.
+- [x] Improve UI captive portal and script install.
 
 ### New Features
 
@@ -121,13 +129,13 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
 
     And then you can connect to Wifi that you put name when you install first and test login captive portal.
 
-<h2 align="center">Mobile Phone</h2>
+<br><h2 align="center">Mobile Phone</h2>
 <p align="center">
-<img src="img/captive-portal.jpg" alt="mililogo" width="300">
+<img src="img/captive-portal2.png" alt="mililogo" width="300">
 </p>
 
 <br>
 <h2 align="center">PC Computer</h2>
 <p align="center">
-<img src="img/pccomputer.png" alt="mililogo" width="700">
+<img src="img/computer.png" alt="mililogo" width="700">
 </p>

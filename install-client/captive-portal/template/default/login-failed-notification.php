@@ -24,14 +24,20 @@
  *
  *********************************************************************************************************
  */
+// echo "<hr><p class='mb-0'>$reply</p>";
 
 echo "<div class='login-respons'>fail</div>";
 echo "<div class='container-fluid fadeInDown'><div class='alert-wrapper'>";
 
-echo "<div class='alert alert-danger text-center' role='alert'>
-    $h1Failed";
+// echo "<script type='text/javascript'>";
+// echo "<div class='alert alert-danger text-center' role='alert'>
+//     $h1Failed";
 if ($reply) {
-    echo "<hr><p class='mb-0'>$reply</p>";
+    echo "<div class='alert alert-danger text-center' role='alert'>";
+    echo "<p class='mb-0'>$reply</p>";
+} else {
+    echo "<div class='alert alert-danger text-center' role='alert'>
+    $h1Failed";
 }
 echo "</div>";
 echo "</div></div>";

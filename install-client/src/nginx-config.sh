@@ -8,6 +8,8 @@ BLUE='\033[1;32m'
 NC='\033[0m'
 
 DOMAIN=$1
+RADIUSSERVER=$2
+
 nginxc(){
 ./src/banner.sh "Configure Nginx"
 
@@ -18,14 +20,18 @@ nginxc(){
         echo -e "${RED}[ Failed ] Copy config!${NC}"
     fi
 
-    ln -s /etc/nginx/sites-available/hotspot.koompi.pi.conf /etc/nginx/sites-enabled/
+    sudo mv /etc/nginx/sites-available/hotspot.koompi.pi.conf /etc/nginx/sites-available/hotspot.$DOMAIN.conf
+    sudo mv /etc/nginx/sites-available/world.koompi.pi.conf /etc/nginx/sites-available/world.$DOMAIN.conf
+    ln -s /etc/nginx/sites-available/* /etc/nginx/sites-enabled/
     nginx -t
-    grep -rli DOMAINNAME /etc/nginx/sites-available/hotspot.koompi.pi.conf | xargs -i@ sed -i s+DOMAINNAME+${DOMAIN}+g @
-    
-    systemctl disable apache2.service
-    systemctl enable nginx php-fpm
-    systemctl start nginx php-fpm
+    grep -rli DOMAINNAME /etc/nginx/sites-available/hotspot.$DOMAIN.conf | xargs -i@ sed -i s+DOMAINNAME+${DOMAIN}+g @
+    grep -rli DOMAINNAME /etc/nginx/sites-available/world.$DOMAIN.conf | xargs -i@ sed -i s+DOMAINNAME+${DOMAIN}+g @
+    grep -rli RADIUSSERVER /etc/nginx/sites-available/world.$DOMAIN.conf | xargs -i@ sed -i s+RADIUSSERVER+${RADIUSSERVER}+g @
 
-    echo -e "${GREEN}[ OK ] Start service nginx!${NC}"
+    systemctl disable apache2.service
+    systemctl enable nginx.service
+    systemctl restart nginx.service
+    STATUS=$(systemctl is-active nginx.service)
+    echo -e "${GREEN}[ ${STATUS} ] Start service nginx!${NC}"
 }
 nginxc

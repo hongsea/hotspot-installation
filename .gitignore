@@ -1,3 +1,4 @@
 deploy.sh
 .env
 install.sh.backup
+install-client/captive-portal/deploy.sh
