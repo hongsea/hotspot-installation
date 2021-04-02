@@ -137,5 +137,5 @@ For this tutorial on installing KOOMPi FiFi, we used a Raspberry Pi 4 running th
 <br>
 <h2 align="center">PC Computer</h2>
 <p align="center">
-<img src="img/pccomputer.png" alt="mililogo" width="700">
+<img src="img/computer.png" alt="mililogo" width="700">
 </p>
