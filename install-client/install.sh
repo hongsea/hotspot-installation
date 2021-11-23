@@ -23,13 +23,34 @@ check_root(){
 }
 check_root
 
-#check wire and wireless adapter
-WIRE=$(ls /sys/class/net/ | grep eth | awk 'NR==1')
-WIRELESS=$(ls /sys/class/net/ | grep wl | awk 'NR==1')
+##check wire and wireless adapter
+#WIRE=$(ls /sys/class/net/ | grep eth | awk 'NR==1')
+#WIRELESS=$(ls /sys/class/net/ | grep wl | awk 'NR==1')
+amount=$(printf "%s\n" /sys/class/net/* | wc -l)
+echo "You have $amount interface. "
+
+l=1
+for i in $(ls /sys/class/net)
+do
+  echo "$l: $i"
+  echo "$i" >> ./.interface
+  ((l++))
+done
+
+read -p "Please select wan interface[]: " SELECTWANLINE
+read -p "Please select wireless interface[]: " SELECTWIRELESSLINE
+
+WIRE=$(head -n $SELECTWANLINE ./.interface | tail -1)
+WIRELESS=$(head -n $SELECTWIRELESSLINE ./.interface | tail -1)
+
+echo "You have select interface: $WANINTERFACE"
+echo "You have select interface: $WIRELESSINTERFACE"
+
+rm ./.interface
 
 ##static-ip-config.sh input
-echo -e "You are have interfaces wan[$WIRE] and lan[$WIRELESS]!"
-read -p "Do you config wan[$WIRE] interface as dhcp client[Y/n]: " YN
+echo -e "You are have interfaces WAN[$WIRE] and WIRELESS[$WIRELESS]!"
+read -p "Do you config WAN[$WIRE] interface as dhcp client[Y/n]: " YN
 
 if [[ ${YN} == y || ${YN} == Y || -z ${YN} ]]; then
     echo "You are choose wan[$WIRE] interface as dhcp client...!"
@@ -59,8 +80,8 @@ else
     done    
 fi
 
-echo "Lan interface need to static ip address"
-echo "Please input lan IP"
+echo "LAN interface need to static ip address"
+echo "Please input LAN IP"
 #input lan ip
 echo -e "\n[${WIRELESS}]: is LAN Interface"
 read -p "IP Address[]: " LANIP
